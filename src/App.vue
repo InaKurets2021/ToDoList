@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <img src="./Group.svg" alt="group" />
+      <img src="./assets/img/Group.svg" alt="group" />
       <div class="container">
         <div class="header">to do list</div>
 
@@ -30,12 +30,12 @@
         </div>
 
         <footer class="footer__menu">
-          <div class="footer__left">
-            <div class="footer__link">1/3left</div>
-          </div>
-          <div class="footer__link">All</div>
-          <div class="footer__link">Active</div>
-          <div class="footer__link">Completed</div>
+          <div class="footer__left">1/3left</div>
+          <form action="footer__radio">
+            <p><input name="radio" type="radio" value="all">All</p>
+            <p><input name="radio" type="radio" value="active">Active</p>
+            <p><input name="radio" type="radio" value="completed" checked> Completed</p>
+          </form>
         </footer>
 
       </div>
@@ -49,29 +49,15 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+$white: #fff;
+$orange: #FE9262;
+$card: #FFCA93;
+$word: #7F4B13;
+$gray: #FFECD8;
 
-
-}
-
-:root {
-  --white: #fff;
-  --orange: #FE9262;
-  --card: #FFCA93;
-  --word: #7F4B13;
-  --gray: #FFECD8;
-}
 
 .wrapper {
   background: linear-gradient(104.11deg, #FF7E5F 14.52%, #FEB567 87.26%);
-  width: 73rem;
-  height: 40rem;
   margin: 0 auto;
   position: relative;
 
@@ -86,23 +72,20 @@ export default {
     height: 27rem;
     left: 20rem;
     top: 6rem;
-    background: var(--white);
-    border: 2px solid var(--orange);
-    box-shadow: 0px 8px 35px 5px var(--orange);
+    background: $white;
+    border: 2px solid $orange;
+    box-shadow: 0px 0.6rem 2rem 0.3rem $orange;
 
     .header {
-      width: 34rem;
       height: 3rem;
-      left: 20rem;
-      top: 6rem;
       font-weight: 600;
       font-size: 1.2rem;
       line-height: 1.7rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--card);
-      color: var(--word);
+      background: $card;
+      color: $word;
     }
 
     .task {
@@ -118,7 +101,7 @@ export default {
       height: 3rem;
       left: 21rem;
       top: 11rem;
-      background: var(--card);
+      background: $card;
       border-radius: .6rem;
       font-weight: 400;
       font-size: 1.2rem;
@@ -127,7 +110,7 @@ export default {
       display: flex;
       align-items: center;
       text-align: center;
-      color: var(--word);
+      color: $word;
     }
 
     label input {
@@ -139,28 +122,30 @@ export default {
       /* <-- стилизируем новый */
       width: 1rem;
       height: 1rem;
-      border: 1.5px solid var(--orange);
+      border: 1.5px solid $orange;
       display: inline-block;
       position: relative;
       padding: 3px;
-      background: var(--card);
+      background: $card;
       border-radius: 5px;
+      cursor: pointer;
     }
 
     [type=checkbox]:checked+span:before {
       /* <-- ставим иконку, когда чекбокс включен  */
-      content: '\2714';
+      content: '';
       position: absolute;
       top: 2px;
       left: 5px;
       font-size: 1.5rem;
-      color: var(--white);
-      background: var(--orange);
+      color: $white;
+      background: $orange;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
       width: 1.5rem;
       height: 1.5rem;
+      background: $orange url(./assets/img/check.svg) center no-repeat;
     }
 
     .btn {
@@ -171,29 +156,29 @@ export default {
       height: 1.5rem;
       position: relative;
       background: none;
-      border: 0.125rem solid var(--orange);
+      border: 0.125rem solid $orange;
       border-radius: 0.25rem;
       cursor: pointer;
       margin-left: 20rem;
-    }
 
-    .btn::after,
-    .btn::before {
-      content: "";
-      width: 0.75rem;
-      height: 0.125rem;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      background-color: var(--orange);
-    }
+      &::after,
+      &::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.125rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background-color: $orange;
+      }
 
-    .btn::after {
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
+      &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
 
-    .btn:before {
-      transform: translate(-50%, -50%) rotate(45deg);
+      &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
     }
 
     .button {
@@ -204,37 +189,29 @@ export default {
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.7rem;
-      background: var(--gray);
-      border: 1.5px dashed var(--orange);
-      border-radius: 10px;
+      background: $gray;
+      border: 1.5px dashed $orange;
+      border-radius: 0.6rem;
       align-items: center;
       text-align: center;
-      color: var(--word);
+      color: $word;
     }
 
     .footer__menu {
-      width: 34rem;
-      height: 3.3rem;
-      left: 20rem;
-      top: 6rem;
       display: flex;
-      background: var(--card);
-      gap: 25px;
-    }
-
-    .footer__link {
-      font-weight: 600;
-      font-size: 1.2rem;
-      line-height: 1.5rem;
-      margin: .8rem 0 .6rem 0;
+      background: $card;
       gap: 1.5rem;
-      align-items: center;
-      text-align: center;
-      color: var(--word);
-    }
-
-    .footer__left {
-      margin: 0 10rem 0 1.8rem;
+      .footer__left {
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        color: $word;
+        margin: 1rem 15rem 0 1.8rem;
+      }
+      .footer__radio {
+       display: flex;
+       
+      }
     }
   }
 }
