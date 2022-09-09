@@ -82,7 +82,7 @@ export default {
     top: 50%;
     background: $white;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 0.6rem 2rem 0.3rem $orange;
+    box-shadow: 0 0.6rem 2rem 0.3rem $orange;
 
     .header {
       height: 3rem;
@@ -171,7 +171,7 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 30px;
+      padding: 0.5rem 1.8rem;
       @include color;
 
       @media (max-width: 480px) {
@@ -196,7 +196,7 @@ export default {
           padding: 0.35rem 0.6rem;
           font-size: 1.25rem;
           line-height: 1.75rem;
-              background-color: transparent;
+          background-color: transparent;
           cursor: pointer;
 
           &:not(:last-of-type) {
@@ -223,7 +223,7 @@ export default {
             border-radius: 0.625rem;
           }
 
-          [type="radio"]:checked + span {
+          [type="radio"]:checked+span {
             border-color: $brown;
           }
         }
