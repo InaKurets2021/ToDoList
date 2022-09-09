@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <img src="./assets/img/Group.svg" alt="group" />
+      <div class="image"></div>
       <div class="container">
         <div class="header">to do list</div>
-
         <div class="menu">
 
           <label class="task">
@@ -31,186 +30,203 @@
 
         <footer class="footer__menu">
           <div class="footer__left">1/3left</div>
-          <form action="footer__radio">
-            <p><input name="radio" type="radio" value="all">All</p>
-            <p><input name="radio" type="radio" value="active">Active</p>
-            <p><input name="radio" type="radio" value="completed" checked> Completed</p>
-          </form>
+          <div class="footer__radio">
+            <label>
+              <input type="radio" name="tab" value="all" checked />
+              <span></span>All
+            </label>
+            <label>
+              <input type="radio" name="tab" value="active" />
+              <span></span>Active
+            </label>
+            <label>
+              <input type="radio" name="tab" value="completed" />
+              <span></span>Completed
+            </label>
+          </div>
         </footer>
 
       </div>
+
     </div>
   </div>
 </template>
 
 <script>
 export default {
- };
+};
 </script>
 
 <style lang="scss">
-$white: #fff;
-$orange: #FE9262;
-$card: #FFCA93;
-$word: #7F4B13;
-$gray: #FFECD8;
+@import "./assets/styles/index.scss";
 
 
 .wrapper {
   background: linear-gradient(104.11deg, #FF7E5F 14.52%, #FEB567 87.26%);
-  margin: 0 auto;
   position: relative;
+  height: 100vh;
 
-  img {
-    padding: 4rem 7.5rem 4rem 41rem;
+  .image {
+    max-width: 60rem;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    background: url("./assets/img/Group.svg") center right no-repeat;
   }
 
   .container {
-    box-sizing: border-box;
     position: absolute;
-    width: 34.2rem;
-    height: 27rem;
-    left: 20rem;
-    top: 6rem;
+    max-width: 34.2rem;
+    width: 100%;
+    left: 50%;
+    top: 50%;
     background: $white;
-    border: 2px solid $orange;
+    transform: translate(-50%, -50%);
     box-shadow: 0px 0.6rem 2rem 0.3rem $orange;
 
     .header {
       height: 3rem;
-      font-weight: 600;
-      font-size: 1.2rem;
-      line-height: 1.7rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: $card;
-      color: $word;
+      @include text;
+      @include flex;
+      @include color;
     }
 
-    .task {
-      width: 30rem;
-      height: 3rem;
-      margin: 1.8rem 1.8rem 1.5rem 1.8rem;
-      text-align: start;
-      font-weight: 400;
-      font-size: 1.2rem;
-      line-height: 1.7rem;
-      padding-left: 1.2rem;
-      width: 30rem;
-      height: 3rem;
-      left: 21rem;
-      top: 11rem;
-      background: $card;
-      border-radius: .6rem;
-      font-weight: 400;
-      font-size: 1.2rem;
-      line-height: 1.7rem;
-      gap: 1.4rem;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: $word;
-    }
+    .menu {
+      padding: 30px;
 
-    label input {
-      display: none;
-      /* <--скрываем дефолтный чекбокс */
-    }
+      .task {
+        padding: 0.75rem 1.25rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0.6rem;
+        @include text;
+        @include flex;
+        @include color;
 
-    label span {
-      /* <-- стилизируем новый */
-      width: 1rem;
-      height: 1rem;
-      border: 1.5px solid $orange;
-      display: inline-block;
-      position: relative;
-      padding: 3px;
-      background: $card;
-      border-radius: 5px;
-      cursor: pointer;
-    }
 
-    [type=checkbox]:checked+span:before {
-      /* <-- ставим иконку, когда чекбокс включен  */
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 5px;
-      font-size: 1.5rem;
-      color: $white;
-      background: $orange;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 1.5rem;
-      height: 1.5rem;
-      background: $orange url(./assets/img/check.svg) center no-repeat;
-    }
+        input {
+          display: none;
+          /* <--скрываем дефолтный чекбокс */
+        }
 
-    .btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      position: relative;
-      background: none;
-      border: 0.125rem solid $orange;
-      border-radius: 0.25rem;
-      cursor: pointer;
-      margin-left: 20rem;
+        span {
+          /* <-- стилизируем новый */
+          @include size;
+          border: 0.125px solid $orange;
+          display: inline-block;
+          position: relative;
+          background: $card;
+          border-radius: 0.25px;
+          cursor: pointer;
+          margin-right: 1.5rem;
+        }
 
-      &::after,
-      &::before {
-        content: "";
-        width: 0.75rem;
-        height: 0.125rem;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        background-color: $orange;
+        [type="checkbox"]:checked+span {
+          background: $orange url(./assets/img/check.svg) center no-repeat;
+        }
+
+        .btn {
+          @include flex;
+          @include size;
+          position: relative;
+          background: none;
+          border: 0.125rem solid $orange;
+          border-radius: 0.25rem;
+          cursor: pointer;
+          margin-left: auto;
+
+          &::after,
+          &::before {
+            content: "";
+            width: 0.75rem;
+            height: 0.125rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: $orange;
+          }
+
+          &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
+
+          &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+        }
       }
 
-      &::after {
-        transform: translate(-50%, -50%) rotate(-45deg);
+      .button {
+        width: 100%;
+        height: 3rem;
+        @include text;
+        background: $gray;
+        border: 1.5px dashed $orange;
+        border-radius: 0.6rem;
+        text-align: center;
+        color: $word;
       }
-
-      &::before {
-        transform: translate(-50%, -50%) rotate(45deg);
-      }
-    }
-
-    .button {
-      width: 31rem;
-      height: 3rem;
-      margin: 0 1rem 1.5rem 1.8rem;
-      text-align: start;
-      font-weight: 400;
-      font-size: 1.2rem;
-      line-height: 1.7rem;
-      background: $gray;
-      border: 1.5px dashed $orange;
-      border-radius: 0.6rem;
-      align-items: center;
-      text-align: center;
-      color: $word;
     }
 
     .footer__menu {
       display: flex;
-      background: $card;
-      gap: 1.5rem;
-      .footer__left {
-        font-weight: 600;
-        font-size: 1.2rem;
-        line-height: 1.5rem;
-        color: $word;
-        margin: 1rem 15rem 0 1.8rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 30px;
+      @include color;
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+        padding: 0.5rem;
       }
+
+      .footer__left {
+        @include text;
+
+        @media (max-width: 480px) {
+          margin-bottom: 0.5rem;
+        }
+      }
+
       .footer__radio {
-       display: flex;
-       
+        display: flex;
+
+        label {
+          position: relative;
+          display: inline-block;
+          padding: 0.35rem 0.6rem;
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+              background-color: transparent;
+          cursor: pointer;
+
+          &:not(:last-of-type) {
+            // всем элементам кроме последнего
+            margin-right: 1.5rem;
+
+            @media (max-width: 480px) {
+              margin-right: 0.5rem;
+            }
+          }
+
+          input {
+            display: none;
+            appearance: none;
+          }
+
+          span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border: 0.125rem solid transparent;
+            border-radius: 0.625rem;
+          }
+
+          [type="radio"]:checked + span {
+            border-color: $brown;
+          }
+        }
       }
     }
   }

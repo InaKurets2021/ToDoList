@@ -1,0 +1,21 @@
+@mixin flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin text {
+	font-weight: 600;
+	font-size: 1.2rem;
+	line-height: 1.7rem;
+}
+
+@mixin color {
+	background: $card;
+	color: $word;
+}
+
+@mixin size {
+	width: 1.5rem;
+	height: 1.5rem;
+}
