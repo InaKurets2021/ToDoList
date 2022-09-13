@@ -3,34 +3,36 @@
     <div class="wrapper">
       <div class="image"></div>
       <div class="container">
-        <div class="header">to do list</div>
-        <div class="menu">
 
-          <label class="task">
+        <div class="Header">to do list</div>
+
+        <div class="Content">
+
+          <label class="Task">
             <input type='checkbox' name="task1" value="" checked>
             <span></span>Task 1
-            <button class="btn"></button>
+            <button class="DeleteButton"></button>
           </label>
 
-          <label class="task">
-            <input type='checkbox' name="task1" value="" checked>
+          <label class="Task">
+            <input type='CheckBox' name="task1" value="" checked>
             <span></span> Task 2
-            <button class="btn"></button>
+            <button class="DeleteButton"></button>
           </label>
 
-          <label class="task">
+          <label class="Task">
             <input type='checkbox' name="task1" value="" checked>
             <span></span> Task 3
-            <button class="btn"></button>
+            <button class="DeleteButton"></button>
           </label>
 
-          <div><input class="button" placeholder="Add a new task" type="text" id="username" value=""></div>
+          <div><input class="AddButton" placeholder="Add a new task" type="text" id="username" value=""></div>
 
         </div>
 
-        <footer class="footer__menu">
-          <div class="footer__left">1/3left</div>
-          <div class="footer__radio">
+        <footer class="Footer">
+          <div class="FooterLeft">1/3left</div>
+          <div class="FooterRadio">
             <label>
               <input type="radio" name="tab" value="all" checked />
               <span></span>All
@@ -45,15 +47,23 @@
             </label>
           </div>
         </footer>
-
       </div>
-
     </div>
+
   </div>
 </template>
 
 <script>
+import Atoms from "./components/atoms";
+import Molecules from "./components/molecules";
+import Organisms from "./components/organisms";
+
 export default {
+  components: {
+    Atoms,
+    Molecules,
+    Organisms,
+  },
 };
 </script>
 
@@ -84,17 +94,17 @@ export default {
     transform: translate(-50%, -50%);
     box-shadow: 0 0.6rem 2rem 0.3rem $orange;
 
-    .header {
+    .Header {
       height: 3rem;
       @include text;
       @include flex;
       @include color;
     }
 
-    .menu {
+    .Content {
       padding: 30px;
 
-      .task {
+      .Task {
         padding: 0.75rem 1.25rem;
         margin-bottom: 1.5rem;
         border-radius: 0.6rem;
@@ -124,7 +134,7 @@ export default {
           background: $orange url(./assets/img/check.svg) center no-repeat;
         }
 
-        .btn {
+        .DeleteButton {
           @include flex;
           @include size;
           position: relative;
@@ -155,7 +165,7 @@ export default {
         }
       }
 
-      .button {
+      .AddButton {
         width: 100%;
         height: 3rem;
         @include text;
@@ -167,7 +177,7 @@ export default {
       }
     }
 
-    .footer__menu {
+    .Footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -179,7 +189,7 @@ export default {
         padding: 0.5rem;
       }
 
-      .footer__left {
+      .FooterLeft {
         @include text;
 
         @media (max-width: 480px) {
@@ -187,7 +197,7 @@ export default {
         }
       }
 
-      .footer__radio {
+      .FooterRadio {
         display: flex;
 
         label {
