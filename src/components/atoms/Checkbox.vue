@@ -1,9 +1,31 @@
 <template>
-	<input type='CheckBox' name="task1" value="" checked > </input>
+	<label>
+		<input type='checkbox' name="task1" value="" :checked="isChecked">
+		<span></span>{{name}}
+
+		<DeleteButton />
+	</label>
 </template>
-<script></script>
+
+<script>
+export default {
+	props: {
+		name: {
+			type: String,
+			default: '',
+		},
+		isChecked: {
+			type: Boolean,
+			default: false,
+		}
+	},
+}
+
+</script>
 
 <style lang="scss">
+@import "./assets/styles/index.scss";
+
 input {
 	display: none;
 	/* <--скрываем дефолтный чекбокс */

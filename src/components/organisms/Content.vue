@@ -1,8 +1,6 @@
 <template>
-	<div>
-		<Task />
-		<AddButton />
-	</div>
+	<Task />
+	<AddButton />
 </template>
 
 <script>
@@ -19,6 +17,8 @@ export default {
 
 
 <style lang="scss">
+@import "./assets/styles/index.scss";
+
 .Content {
 	padding: 30px;
 }

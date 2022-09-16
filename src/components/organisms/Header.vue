@@ -1,23 +1,11 @@
 <template>
-	<div class="Header">to do list</div>
-	<Header />
-
-</template>
-
-<script>
-
-//?????
-
-
-export default {
-	components: {
-		Header,
-	},
-};
-</script>
+	<div class="header">to do list</div>
+</template>	
 
 <style lang="scss">
-.Header {
+@import	"./assets/styles/index.scss";
+
+.header {
 	height: 3rem;
 	@include text;
 	@include flex;

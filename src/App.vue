@@ -3,66 +3,28 @@
     <div class="wrapper">
       <div class="image"></div>
       <div class="container">
-
-        <div class="Header">to do list</div>
-
-        <div class="Content">
-
-          <label class="Task">
-            <input type='checkbox' name="task1" value="" checked>
-            <span></span>Task 1
-            <button class="DeleteButton"></button>
-          </label>
-
-          <label class="Task">
-            <input type='CheckBox' name="task1" value="" checked>
-            <span></span> Task 2
-            <button class="DeleteButton"></button>
-          </label>
-
-          <label class="Task">
-            <input type='checkbox' name="task1" value="" checked>
-            <span></span> Task 3
-            <button class="DeleteButton"></button>
-          </label>
-
-          <div><input class="AddButton" placeholder="Add a new task" type="text" id="username" value=""></div>
-
-        </div>
-
-        <footer class="Footer">
-          <div class="FooterLeft">1/3left</div>
-          <div class="FooterRadio">
-            <label>
-              <input type="radio" name="tab" value="all" checked />
-              <span></span>All
-            </label>
-            <label>
-              <input type="radio" name="tab" value="active" />
-              <span></span>Active
-            </label>
-            <label>
-              <input type="radio" name="tab" value="completed" />
-              <span></span>Completed
-            </label>
-          </div>
-        </footer>
+        <Header />
+        <Content />
       </div>
+      <Footer />
     </div>
-
   </div>
+
 </template>
 
 <script>
-import Atoms from "./components/atoms";
-import Molecules from "./components/molecules";
-import Organisms from "./components/organisms";
+
+import Header from "./components/organisms/Header.vue";
+import Content from "./components/organisms/Content.vue";
+import Footer from "./components/organisms/Footer.vue";
+
+
 
 export default {
   components: {
-    Atoms,
-    Molecules,
-    Organisms,
+    Header,
+    Content,
+    Footer,
   },
 };
 </script>
@@ -93,152 +55,6 @@ export default {
     background: $white;
     transform: translate(-50%, -50%);
     box-shadow: 0 0.6rem 2rem 0.3rem $orange;
-
-    .Header {
-      height: 3rem;
-      @include text;
-      @include flex;
-      @include color;
-    }
-
-    .Content {
-      padding: 30px;
-
-      .Task {
-        padding: 0.75rem 1.25rem;
-        margin-bottom: 1.5rem;
-        border-radius: 0.6rem;
-        @include text;
-        @include flex;
-        @include color;
-
-
-        input {
-          display: none;
-          /* <--скрываем дефолтный чекбокс */
-        }
-
-        span {
-          /* <-- стилизируем новый */
-          @include size;
-          border: 0.125px solid $orange;
-          display: inline-block;
-          position: relative;
-          background: $card;
-          border-radius: 0.25px;
-          cursor: pointer;
-          margin-right: 1.5rem;
-        }
-
-        [type="checkbox"]:checked+span {
-          background: $orange url(./assets/img/check.svg) center no-repeat;
-        }
-
-        .DeleteButton {
-          @include flex;
-          @include size;
-          position: relative;
-          background: none;
-          border: 0.125rem solid $orange;
-          border-radius: 0.25rem;
-          cursor: pointer;
-          margin-left: auto;
-
-          &::after,
-          &::before {
-            content: "";
-            width: 0.75rem;
-            height: 0.125rem;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            background-color: $orange;
-          }
-
-          &::after {
-            transform: translate(-50%, -50%) rotate(-45deg);
-          }
-
-          &::before {
-            transform: translate(-50%, -50%) rotate(45deg);
-          }
-        }
-      }
-
-      .AddButton {
-        width: 100%;
-        height: 3rem;
-        @include text;
-        background: $gray;
-        border: 1.5px dashed $orange;
-        border-radius: 0.6rem;
-        text-align: center;
-        color: $word;
-      }
-    }
-
-    .Footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 1.8rem;
-      @include color;
-
-      @media (max-width: 480px) {
-        flex-direction: column;
-        padding: 0.5rem;
-      }
-
-      .FooterLeft {
-        @include text;
-
-        @media (max-width: 480px) {
-          margin-bottom: 0.5rem;
-        }
-      }
-
-      .FooterRadio {
-        display: flex;
-
-        label {
-          position: relative;
-          display: inline-block;
-          padding: 0.35rem 0.6rem;
-          font-size: 1.25rem;
-          line-height: 1.75rem;
-          background-color: transparent;
-          cursor: pointer;
-
-          &:not(:last-of-type) {
-            // всем элементам кроме последнего
-            margin-right: 1.5rem;
-
-            @media (max-width: 480px) {
-              margin-right: 0.5rem;
-            }
-          }
-
-          input {
-            display: none;
-            appearance: none;
-          }
-
-          span {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            border: 0.125rem solid transparent;
-            border-radius: 0.625rem;
-          }
-
-          [type="radio"]:checked+span {
-            border-color: $brown;
-          }
-        }
-      }
-    }
   }
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
 	<button class="DeleteButton"></button>
-
 </template>
 	
 </script></script>
 
 <style lang="scss">
+@import "./assets/styles/index.scss";
 
 .DeleteButton {
 	@include flex;

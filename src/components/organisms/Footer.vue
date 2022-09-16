@@ -5,7 +5,7 @@
 
 <script>
 import FooterLeft from "../atoms/FooterLeft.vue";
-import FooterRadio from "../atoms/FooterRadio.vue";
+import FooterRadio from "../molecules/FooterRadio.vue";
 
 export default {
 	components: {
@@ -16,6 +16,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/index.scss";
+
 .Footer {
 	display: flex;
 	justify-content: space-between;
