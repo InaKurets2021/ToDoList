@@ -5,20 +5,16 @@
       <div class="container">
         <Header />
         <Content />
+        <Footer />
       </div>
-      <Footer />
     </div>
   </div>
-
 </template>
 
 <script>
-
 import Header from "./components/organisms/Header.vue";
 import Content from "./components/organisms/Content.vue";
 import Footer from "./components/organisms/Footer.vue";
-
-
 
 export default {
   components: {
@@ -30,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/styles/index.scss";
+@import "@/assets/styles/index.scss";
 
 
 .wrapper {

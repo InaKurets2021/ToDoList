@@ -3,7 +3,7 @@
 </template>	
 
 <style lang="scss">
-@import	"./assets/styles/index.scss";
+@import	"@/assets/styles/index.scss";
 
 .header {
 	height: 3rem;

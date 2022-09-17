@@ -1,12 +1,12 @@
 <template>
-	<div class="FooterLeft">1/3left</div>
+	<div class="footerLeft">1/3left</div>
 </template>
 
 
 <style lang="scss">
-@import "./assets/styles/index.scss";
+@import "@/assets/styles/index.scss";
 
-.FooterLeft {
+.footerLeft {
 	@include text;
 
 	@media (max-width: 480px) {

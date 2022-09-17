@@ -1,48 +1,37 @@
 <template>
-	<label class="Task">
-
-		<Checkbox v-for="item in tasks" :key="item.title" :name="item.name" :isChecked="item.isChecked" />
-
+	<label class="task">
+		<input type="checkbox" name="task1" value="" :checked="isChecked" />
+		
+		<span></span>{{ name }}
 		<DeleteButton />
 	</label>
 </template>
 
 <script>
-import Checkbox from "../atoms/Checkbox.vue";
 import DeleteButton from "../atoms/DeleteButton.vue";
 
 export default {
 	components: {
-		Checkbox,
 		DeleteButton,
 	},
 
-
-	data() {
-		return {
-			tasks: [
-				{
-					name: 'Task1',
-					isChecked: true
-				},
-				{
-					name: 'Task2',
-					isChecked: false
-				},
-				{
-					name: 'Task3',
-					isChecked: false
-				},
-			]
-		}
+	props: {
+		name: {
+			type: String,
+			default: "",
+		},
+		isChecked: {
+			type: Boolean,
+			default: false,
+		},
 	}
 }
 </script>
 
 <style lang="scss">
-@import "./assets/styles/index.scss";
+@import "@/assets/styles/index.scss";
 
-.Task {
+.task {
 	padding: 0.75rem 1.25rem;
 	margin-bottom: 1.5rem;
 	border-radius: 0.6rem;
@@ -50,4 +39,24 @@ export default {
 	@include flex;
 	@include color;
 }
+
+input {
+	display: none;
+}
+
+span {
+	/* <-- стилизируем новый */
+	@include size;
+	border: 0.125px solid $orange;
+	display: inline-block;
+	position: relative;
+	background: $card;
+	border-radius: 0.25px;
+	cursor: pointer;
+	margin-right: 1.5rem;
+}
+
+[type="checkbox"]:checked+span {
+	background: $orange url("../../assets/img/check.svg") center no-repeat;
+	}
 </style>

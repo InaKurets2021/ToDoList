@@ -1,11 +1,13 @@
 <template>
-	<FooterLeft />
-	<FooterRadio />
+	<footer class="footer">
+    <FooterLeft />
+    <FooterRadio />
+  </footer>
 </template>
 
 <script>
-import FooterLeft from "../atoms/FooterLeft.vue";
-import FooterRadio from "../molecules/FooterRadio.vue";
+import FooterLeft from "@/components/atoms/FooterLeft.vue";
+import FooterRadio from "@/components/molecules/FooterRadio.vue";
 
 export default {
 	components: {
@@ -16,9 +18,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/styles/index.scss";
+@import "@/assets/styles/index.scss";
 
-.Footer {
+.footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
