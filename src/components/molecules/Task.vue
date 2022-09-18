@@ -1,5 +1,5 @@
 <template>
-	<label class="task">
+	<label :class="$style.task">
 		<input type="checkbox" name="task1" value="" :checked="isChecked" />
 		
 		<span></span>{{ name }}
@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/styles/index.scss";
 
 .task {
@@ -38,8 +38,6 @@ export default {
 	@include text;
 	@include flex;
 	@include color;
-}
-
 input {
 	display: none;
 }
@@ -59,4 +57,5 @@ span {
 [type="checkbox"]:checked+span {
 	background: $orange url("../../assets/img/check.svg") center no-repeat;
 	}
+}
 </style>

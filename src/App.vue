@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div class="wrapper">
-      <div class="image"></div>
-      <div class="container">
+    <div :class="$style.wrapper">
+      <div :class="$style.image"></div>
+      <div :class="$style.container">
         <Header />
         <Content />
         <Footer />
@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/styles/index.scss";
 
 

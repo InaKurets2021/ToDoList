@@ -1,5 +1,5 @@
 <template>
-	<div class="content">
+	<div :class="$style.content">
 		<Task 
 		v-for="item in tasks" :key="item.title" :name="item.name" :isChecked="item.isChecked"/>
 		<AddButton />
@@ -36,7 +36,7 @@ export default {
 }; 
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/styles/index.scss";
 .content {
 	padding: 30px;

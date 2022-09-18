@@ -1,9 +1,9 @@
 <template>
-	<div class="footerLeft">1/3left</div>
+	<div :class="$style.footerLeft">1/3left</div>
 </template>
 
 
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/styles/index.scss";
 
 .footerLeft {

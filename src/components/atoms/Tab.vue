@@ -1,5 +1,5 @@
 <template>
-  <label class="tab">
+  <label :class="$style.tab">
     <input type="radio" name="tab" value="all" :checked="isChecked" />
     <span></span> {{ name }}
   </label>
@@ -20,7 +20,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/styles/index.scss";
 
 .tab {

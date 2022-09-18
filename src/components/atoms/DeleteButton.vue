@@ -1,8 +1,8 @@
 <template>
-	<button class="deleteButton"></button>
+	<button :class="$style.deleteButton"></button>
 </template>
 	
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/styles/index.scss";
 
 .deleteButton {

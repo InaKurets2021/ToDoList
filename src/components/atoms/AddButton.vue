@@ -1,7 +1,7 @@
 <template>
   <div>
     <input
-      class="addButton"
+    :class="$style.addButton"
       placeholder="Add a new task"
       type="text"
       id="username"
@@ -11,7 +11,7 @@
 </template>
 
 
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/styles/index.scss"; 
 
 .addButton {

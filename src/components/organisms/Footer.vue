@@ -1,5 +1,5 @@
 <template>
-	<footer class="footer">
+	<footer :class="$style.footer">
     <FooterLeft />
     <FooterRadio />
   </footer>
@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/styles/index.scss";
 
 .footer {

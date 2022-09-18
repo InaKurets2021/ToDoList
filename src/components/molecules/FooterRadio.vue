@@ -1,5 +1,5 @@
 <template>
-  <div class="footerRadio">
+  <div :class="$style.footerRadio">
     <Tab
       v-for="item in tabs"
       :key="item.title"
@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 .footerRadio {
   display: flex;
 }

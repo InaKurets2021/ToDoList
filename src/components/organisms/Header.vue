@@ -1,8 +1,8 @@
 <template>
-	<div class="header">to do list</div>
+	<div :class="$style.header">to do list</div>
 </template>	
 
-<style lang="scss">
+<style lang="scss" module>
 @import	"@/assets/styles/index.scss";
 
 .header {
