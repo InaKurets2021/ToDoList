@@ -1,15 +1,12 @@
 <template>
-	<button :class="$style.deleteButton" @submit.prevent="delTask"></button>
+	<button :class="$style.deleteButton" @submit.prevent="delTask" @click="delTask"></button>
 </template>
 	
 <script>
 export default {
 	methods: {
 		delTask() {
-			{
-				this.$store.commit("deleteTask");
-			}
-		},
+	},
 	},
 }
 

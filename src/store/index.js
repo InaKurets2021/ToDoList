@@ -36,15 +36,14 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    createNewTask(state, idTask) {
+    createNewTask(state, task) {
       state.tasks.push({
-        id: state.tasks.length + 1,
-        name: idTask,
+       name: task,
         isChecked: false,
       })
     },
-    deleteTask() {
-      
+        deleteTask() {
+     
     }
   },
   actions: {},
