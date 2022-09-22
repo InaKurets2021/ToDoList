@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.content">
 		<Task 
-		v-for="item in tasks" :key="item.title" :name="item.name" :isChecked="item.isChecked"/>
+		v-for="item in $store.state.tasks" :key="item.title" :name="item.name" :isChecked="item.isChecked"/>
 		<AddButton />
 	</div>
 </template>
@@ -15,25 +15,7 @@ export default {
 		Task,
 		AddButton,
 	},
-	data() {
-		return {
-			tasks: [
-				{
-					name: "Task1",
-					isChecked: true,
-				},
-				{
-					name: "Task2",
-					isChecked: false,
-				},
-				{
-					name: "Task3",
-					isChecked: false,
-				},
-			],
-		};
-	},
-}; 
+	}; 
 </script>
 
 <style lang="scss" module>

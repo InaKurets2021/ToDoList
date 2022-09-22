@@ -1,18 +1,34 @@
 <template>
-  <div>
-    <input
-    :class="$style.addButton"
-      placeholder="Add a new task"
-      type="text"
-      id="username"
-      value=""
+  <form @submit.prevent="addTask">
+    <input :class="$style.addButton" 
+    placeholder="Add a new task" 
+    type="text" 
+    v-model="value"
     />
-  </div>
+  </form>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      value: "",
+    };
+  },
+  methods: {
+    addTask() {
+      if (this.value) {
+        this.$store.commit("createNewTask", this.value);
+        this.value = "";
+      }
+    },
+  },
+};
+
+</script>
 
 <style lang="scss" module>
-@import "@/assets/styles/index.scss"; 
+@import "@/assets/styles/index.scss";
 
 .addButton {
   width: 100%;

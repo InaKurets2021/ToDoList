@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.footerRadio">
     <Tab
-      v-for="item in tabs"
+      v-for="item in $store.state.tabs"
       :key="item.title"
       :name="item.name"
       :isChecked="item.isChecked"
@@ -17,24 +17,7 @@ export default {
     Tab,
   },
 
-  data() {
-    return {
-      tabs: [
-        {
-          name: "All",
-          isChecked: true,
-        },
-        {
-          name: "Active",
-          isChecked: false,
-        },
-        {
-          name: "Completed",
-          isChecked: false,
-        },
-      ],
-    };
-  },
+  
 };
 </script>
 

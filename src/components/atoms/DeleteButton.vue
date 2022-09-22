@@ -1,7 +1,19 @@
 <template>
-	<button :class="$style.deleteButton"></button>
+	<button :class="$style.deleteButton" @submit.prevent="delTask"></button>
 </template>
 	
+<script>
+export default {
+	methods: {
+		delTask() {
+			{
+				this.$store.commit("deleteTask");
+			}
+		},
+	},
+}
+
+</script>
 <style lang="scss" module>
 @import "@/assets/styles/index.scss";
 

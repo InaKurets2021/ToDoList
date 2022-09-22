@@ -1,7 +1,13 @@
 <template>
-	<div :class="$style.footerLeft">1/3left</div>
+	<div :class="$style.footerLeft">{{ getActiveTasksCount }}/{{getAllTasksCount}}</div>
 </template>
 
+<script>
+import { mapGetters } from 'vuex';
+export default {
+	computed: mapGetters(["getActiveTasksCount", "getAllTasksCount"]),
+};
+</script>
 
 <style lang="scss" module>
 @import "@/assets/styles/index.scss";
