@@ -9,15 +9,12 @@
   </div>
 </template>
 
-
 <script>
 import Tab from "@/components/atoms/Tab";
 export default {
   components: {
     Tab,
   },
-
-  
 };
 </script>
 

@@ -1,9 +1,10 @@
 <template>
   <form @submit.prevent="addTask">
-    <input :class="$style.addButton" 
-    placeholder="Add a new task" 
-    type="text" 
-    v-model="value"
+    <input
+      :class="$style.addButton"
+      placeholder="Add a new task"
+      type="text"
+      v-model="value"
     />
   </form>
 </template>
@@ -24,7 +25,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style lang="scss" module>
@@ -41,4 +41,3 @@ export default {
   color: $word;
 }
 </style>
-

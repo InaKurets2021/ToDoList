@@ -1,6 +1,6 @@
 <template>
   <label :class="$style.tab">
-    <input type="radio" name="tab" value="all" :checked="isChecked" />
+    <input type="radio" name="tab" :checked="isChecked" />
     <span></span> {{ name }}
   </label>
 </template>
@@ -10,12 +10,12 @@ export default {
   props: {
     name: {
       type: String,
-      default: '',
+      default: "",
     },
     isChecked: {
       type: Boolean,
       default: false,
-    }
+    },
   },
 };
 </script>
@@ -61,4 +61,3 @@ export default {
   }
 }
 </style>
-

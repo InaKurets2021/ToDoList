@@ -1,11 +1,13 @@
 <template>
-	<div :class="$style.footerLeft">{{ getActiveTasksCount }}/{{getAllTasksCount}}</div>
+  <div :class="$style.footerLeft">
+    {{ getActiveTasksCount }}/{{ getAllTasksCount }}
+  </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 export default {
-	computed: mapGetters(["getActiveTasksCount", "getAllTasksCount"]),
+  computed: mapGetters(["getActiveTasksCount", "getAllTasksCount"]),
 };
 </script>
 
@@ -13,10 +15,10 @@ export default {
 @import "@/assets/styles/index.scss";
 
 .footerLeft {
-	@include text;
+  @include text;
 
-	@media (max-width: 480px) {
-		margin-bottom: 0.5rem;
-	}
+  @media (max-width: 480px) {
+    margin-bottom: 0.5rem;
+  }
 }
 </style>

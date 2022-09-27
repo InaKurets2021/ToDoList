@@ -28,9 +28,8 @@ export default {
 <style lang="scss" module>
 @import "@/assets/styles/index.scss";
 
-
 .wrapper {
-  background: linear-gradient(104.11deg, #FF7E5F 14.52%, #FEB567 87.26%);
+  background: linear-gradient(104.11deg, #ff7e5f 14.52%, #feb567 87.26%);
   position: relative;
   height: 100vh;
 
