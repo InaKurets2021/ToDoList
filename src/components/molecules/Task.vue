@@ -1,14 +1,18 @@
 <template>
-  <label :class="$style.task">
+  <label :class="$style.task" @change="changeIsChecked(id)">
     <input type="checkbox" :checked="isChecked" />
 
-    <span></span>{{ name }}
+    <span></span>
+    <p :class="{[$style.through]: isChecked}">
+    {{ name }}
+    </p>
     <DeleteButton :id="id" />
   </label>
 </template>
 
 <script>
-import DeleteButton from "../atoms/DeleteButton.vue";
+import { mapMutations } from 'vuex';
+import  DeleteButton  from "../atoms/DeleteButton.vue";
 
 export default {
   components: {
@@ -17,7 +21,7 @@ export default {
 
   props: {
     id: {
-      type: Number,
+      type: String,
     },
     name: {
       type: String,
@@ -28,7 +32,11 @@ export default {
       default: false,
     },
   },
-};
+  methods: {
+    ...mapMutations(['changeIsChecked'])
+  },
+}
+
 </script>
 
 <style lang="scss" module>
@@ -57,8 +65,11 @@ export default {
     cursor: pointer;
     margin-right: 1.5rem;
   }
+  .through {
+  text-decoration: line-through;
+  }
 
-  [type="checkbox"]:checked + span {
+  [type="checkbox"]:checked+span {
     background: $orange url("../../assets/img/check.svg") center no-repeat;
   }
 }

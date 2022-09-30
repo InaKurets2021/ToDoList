@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.content">
     <Task
-      v-for="item in $store.state.tasks"
+      v-for="item in $store.getters.getFilterTask"
       :key="item.title"
       :name="item.name"
       :isChecked="item.isChecked"

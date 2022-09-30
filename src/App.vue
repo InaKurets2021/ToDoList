@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import Header from "./components/organisms/Header.vue";
 import Content from "./components/organisms/Content.vue";
 import Footer from "./components/organisms/Footer.vue";
@@ -22,6 +23,12 @@ export default {
     Content,
     Footer,
   },
+  methods: {
+    ...mapActions (["getTasksLocalStorage"]),
+  },
+  mounted() {
+    this.getTasksLocalStorage();
+  }
 };
 </script>
 

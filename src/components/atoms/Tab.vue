@@ -1,11 +1,12 @@
 <template>
-  <label :class="$style.tab">
+  <label :class="$style.tab" @click="changeTabName(name)">
     <input type="radio" name="tab" :checked="isChecked" />
     <span></span> {{ name }}
   </label>
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
 export default {
   props: {
     name: {
@@ -17,6 +18,9 @@ export default {
       default: false,
     },
   },
+  methods: {
+    ...mapMutations(['changeTabName']),
+  }
 };
 </script>
 
