@@ -57,7 +57,7 @@ export default {
   span {
     /* <-- стилизируем новый */
     @include size;
-    border: 0.125px solid $orange;
+    border: 0.125px solid $purple;
     display: inline-block;
     position: relative;
     background: $card;
@@ -70,7 +70,7 @@ export default {
   }
 
   [type="checkbox"]:checked+span {
-    background: $orange url("../../assets/img/check.svg") center no-repeat;
+    background: $purple url("../../assets/img/check.svg") center no-repeat;
   }
 }
 </style>

@@ -6,7 +6,7 @@
 export default {
   props: {
     id: {
-      type: Number,
+      type: String,
     },
   },
   methods: {
@@ -24,7 +24,7 @@ export default {
   @include size;
   position: relative;
   background: none;
-  border: 0.125rem solid $orange;
+  border: 0.125rem solid $purple;
   border-radius: 0.25rem;
   cursor: pointer;
   margin-left: auto;
@@ -37,7 +37,7 @@ export default {
     position: absolute;
     left: 50%;
     top: 50%;
-    background-color: $orange;
+    background-color: $purple;
   }
 
   &::after {

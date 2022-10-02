@@ -36,7 +36,7 @@ export default {
 @import "@/assets/styles/index.scss";
 
 .wrapper {
-  background: linear-gradient(104.11deg, #ff7e5f 14.52%, #feb567 87.26%);
+  background: linear-gradient(104.11deg, #ddb9f1 14.52%, #a271cf 87.26%);
   position: relative;
   height: 100vh;
 
@@ -56,7 +56,7 @@ export default {
     top: 50%;
     background: $white;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0.6rem 2rem 0.3rem $orange;
+    box-shadow: 0 0.6rem 2rem 0.3rem $purple;
   }
 }
 </style>

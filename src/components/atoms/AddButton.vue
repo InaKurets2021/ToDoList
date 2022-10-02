@@ -9,7 +9,6 @@
   </form>
 </template>
 
-
 <script>
 export default {
   data() {
@@ -36,7 +35,7 @@ export default {
   height: 3rem;
   @include text;
   background: $gray;
-  border: 1.5px dashed $orange;
+  border: 1.5px dashed $purple;
   border-radius: 0.6rem;
   text-align: center;
   color: $word;

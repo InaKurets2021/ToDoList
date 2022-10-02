@@ -61,7 +61,7 @@ export default {
   }
 
   [type="radio"]:checked + span {
-    border-color: $brown;
+    border-color: $white;
   }
 }
 </style>

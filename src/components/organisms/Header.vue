@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.header">to do list</div>
+  <div :class="$style.header">TO DO LIST</div>
 </template>
 
 <style lang="scss" module>

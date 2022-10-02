@@ -4,29 +4,10 @@ import { v4 as uuidv4 } from "uuid";
 
 Vue.use(Vuex);
 
-
-
-
 export default new Vuex.Store({
   state: {
-   
-    tasks: [
-      {
-        id: 1,
-        name: "Task1",
-        isChecked: true,
-      },
-      {
-        id: 2,
-        name: "Task2",
-        isChecked: false,
-      },
-      {
-        id: 3,
-        name: "Task3",
-        isChecked: false,
-      },
-    ],
+
+    tasks: [ ],
     tabActive: 'All',
     tabs: [
       {
@@ -47,7 +28,7 @@ export default new Vuex.Store({
   mutations: {
     createNewTask(state, task) {
       state.tasks.push({
-        id:uuidv4(),
+        id: uuidv4(),
         name: task,
         isChecked: false,
       });
@@ -64,7 +45,7 @@ export default new Vuex.Store({
           localStorage.setItem("tasks", JSON.stringify(state.tasks));
         }
       });
-     
+
     },
     changeTabName(state, name) {
       state.tabActive = name;
@@ -74,14 +55,14 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    getTasksLocalStorage (commit) {
+    getTasksLocalStorage({ commit }) {
       const tasksLocalStorage = JSON.parse(localStorage.getItem("tasks")) || [];
-      commit ('addedTasks', tasksLocalStorage)
+      commit('addedTasks', tasksLocalStorage)
     }
   },
   getters: {
     getActiveTasksCount(state) {
-      return state.tasks.filter((task) => task.isChecked === false).length;
+      return state.tasks.filter((task) => task.isChecked === true).length;
     },
     getAllTasksCount(state) {
       return state.tasks.length;
@@ -94,8 +75,7 @@ export default new Vuex.Store({
       } else {
         return state.tasks;
       }
-      },
+    },
   },
-  
-  },
- );
+},
+);
