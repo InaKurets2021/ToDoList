@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex';
+import { mapMutations } from 'vuex';
 export default {
   props: {
     name: {
@@ -60,7 +60,7 @@ export default {
     border-radius: 0.625rem;
   }
 
-  [type="radio"]:checked + span {
+  [type="radio"]:checked+span {
     border-color: $white;
   }
 }

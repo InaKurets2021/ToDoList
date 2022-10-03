@@ -6,8 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-
-    tasks: [ ],
+    tasks: [],
     tabActive: 'All',
     tabs: [
       {

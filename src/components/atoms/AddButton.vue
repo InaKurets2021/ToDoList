@@ -1,11 +1,6 @@
 <template>
   <form @submit.prevent="addTask">
-    <input
-      :class="$style.addButton"
-      placeholder="Add a new task"
-      type="text"
-      v-model="value"
-    />
+    <input :class="$style.addButton" placeholder="Add a new task" type="text" v-model="value" />
   </form>
 </template>
 
