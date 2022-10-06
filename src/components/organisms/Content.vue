@@ -1,12 +1,12 @@
 <template>
   <div :class="$style.content">
-    <Task
-      v-for="item in $store.getters.getFilterTask"
-      :key="item.title"
-      :name="item.name"
-      :isChecked="item.isChecked"
-      :id="item.id"
-    />
+    <div :class="$style.wrapper">
+      <div :class="$style.noTask" v-if="!$store.getters.getFilterTask.length">
+        No tasks!
+      </div>
+      <Task v-for="item in $store.getters.getFilterTask" :key="item.title" :name="item.name" :isChecked="item.isChecked"
+        :id="item.id" />
+    </div>
     <AddButton />
   </div>
 </template>
@@ -25,7 +25,32 @@ export default {
 
 <style lang="scss" module>
 @import "@/assets/styles/index.scss";
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: $purple;
+  border-radius: 9rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $card;
+  border-radius: 9rem;
+}
+
 .content {
   padding: 30px;
+
+  .wrapper {
+    padding-right: 1rem;
+    min-height: 100px;
+    max-height: 380px;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+  .noTask {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 </style>
