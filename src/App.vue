@@ -36,7 +36,7 @@ export default {
 @import "@/assets/styles/index.scss";
 
 .wrapper {
-  background: linear-gradient(104.11deg, #ddb9f1 14.52%, #a271cf 87.26%);
+  background: linear-gradient(104.11deg, #f8d4ed 14.52%,#e299b0 87.26%);
   position: relative;
   height: 100vh;
 
