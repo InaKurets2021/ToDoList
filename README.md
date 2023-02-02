@@ -23,4 +23,4 @@
 
 ### Демо сайта:
 
-[ToDo List](inakurets2021.github.io/ToDoList/)
+[ToDo List](https://inakurets2021.github.io/ToDoList/)
