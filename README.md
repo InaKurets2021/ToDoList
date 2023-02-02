@@ -1,34 +1,26 @@
-# vuefirst
+# Учебный проект ToDo List
 
-## Project setup
-```
-npm install
-```
+### Быстрый старт:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- Клонируйте репозиторий: `git clone https://github.com/InaKurets2021/ToDoList.git`
+- Установите зависимости: `yarn install` или `npm install`
+- Запустите проект: `yarn serve` или `npm run serve`
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Стэк используемых технологий:
 
-### Run your unit tests
-```
-npm run test:unit
-```
+- HTML
+- SCSS
+- Vue
+- Vue-router
+- Js
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+### Реализовано в проекте:
 
-### Lints and fixes files
-```
-npm run lint
-```
+- Роутинг
+- Сортировка
+- Поиск
+- grid / column отображение персонажей
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Демо сайта:
+
+[ToDo List](inakurets2021.github.io/ToDoList/)
