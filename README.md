@@ -1,4 +1,4 @@
-# Учебный проект ToDo List
+# Учебный проект ToDoList
 
 ### Быстрый старт:
 
@@ -19,8 +19,8 @@
 - Роутинг
 - Сортировка
 - Поиск
-- grid / column отображение персонажей
+
 
 ### Демо сайта:
 
-[ToDo List](https://inakurets2021.github.io/ToDoList/)
+[ToDoList](https://inakurets2021.github.io/ToDoList/)
