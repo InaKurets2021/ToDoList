@@ -12,7 +12,7 @@
 - SCSS
 - Vue
 - Vue-router
-- Js
+- JS
 
 ### Реализовано в проекте:
 
